@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateAccountViewController: UIViewController {
 
@@ -42,7 +43,21 @@ class CreateAccountViewController: UIViewController {
             showMSG("兩次密碼必需相同")
             return
         }
-   
+        
+        Auth.auth().createUser(withEmail: inputAccount, password: password1) { authResult, error in
+            if let error = error{
+                print(error.localizedDescription)
+                self.showMSG("錯誤：\(error.localizedDescription ?? "不明")")
+                return
+            }
+            if let uid = authResult?.user.uid{
+                self.showMSG("成功，uid:\(uid)")
+            }
+            
+            
+        }
+        
+        
         
     }
     
