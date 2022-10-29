@@ -9,21 +9,42 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
 
+    @IBOutlet weak var accout: UITextField!
+    
+    
+    @IBOutlet weak var pw1: UITextField!
+    
+    
+    @IBOutlet weak var pw2: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func createAccount(_ sender: Any) {
+        
+        let inputAccount = accout.text ?? ""
+        let password1 = pw1.text ?? ""
+        let passwrod2 = pw2.text ?? ""
+        
+        if password1.count < 6 {
+            showMSG("密碼必需大於六個字元")
+            return
+        }
+        
+        
+        if (password1 != passwrod2) {
+            showMSG("兩次密碼必需相同")
+            return
+        }
+   
+        
     }
-    */
-
+    
 }
+

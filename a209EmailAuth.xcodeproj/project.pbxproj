@@ -17,6 +17,7 @@
 		BA7FA006290CED6700BFB32F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA7FA005290CED6700BFB32F /* FirebaseAnalytics */; };
 		BA7FA008290CED6700BFB32F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA7FA007290CED6700BFB32F /* FirebaseAuth */; };
 		BA7FA00A290CF00C00BFB32F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7FA009290CF00C00BFB32F /* CreateAccountViewController.swift */; };
+		BA7FA00C290CF76A00BFB32F /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7FA00B290CF76A00BFB32F /* Tools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BA7F9FFC290CECB800BFB32F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA7FA002290CED1400BFB32F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA7FA009290CF00C00BFB32F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		BA7FA00B290CF76A00BFB32F /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				BA7F9FF9290CECB800BFB32F /* LaunchScreen.storyboard */,
 				BA7F9FFC290CECB800BFB32F /* Info.plist */,
 				BA7FA009290CF00C00BFB32F /* CreateAccountViewController.swift */,
+				BA7FA00B290CF76A00BFB32F /* Tools.swift */,
 			);
 			path = a209EmailAuth;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				BA7F9FF3290CECB700BFB32F /* ViewController.swift in Sources */,
 				BA7F9FEF290CECB700BFB32F /* AppDelegate.swift in Sources */,
 				BA7F9FF1290CECB700BFB32F /* SceneDelegate.swift in Sources */,
+				BA7FA00C290CF76A00BFB32F /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
