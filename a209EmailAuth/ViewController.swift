@@ -10,20 +10,19 @@ import Firebase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var account: UITextField!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user{
-//                self.statusLabel.text = "歡迎：" + (user.displayName ?? "未知")
+                self.statusLabel.text = "歡迎：" + (user.email ?? "未知")
                 print(user.email)
-//                self.signOutBtn.isEnabled = true
-//                self.gSingInButton.isEnabled = false
             }else{
                 print("未登入")
-//                self.statusLabel.text = "未登入"
-//                self.signOutBtn.isEnabled = false
-//                self.gSingInButton.isEnabled = true
+                self.statusLabel.text = "未登入"
             }
         }
         
@@ -37,6 +36,21 @@ class ViewController: UIViewController {
         self.present(nextVC, animated: true)
     }
     
+    @IBAction func singIn(_ sender: Any) {
+        let theAccount = account.text ?? ""
+        let thePassword = password.text ?? ""
+        
+        // 各種檢查
+        
+        Auth.auth().signIn(withEmail: theAccount, password: thePassword){ authResult, error in
+            if let error = error{
+                self.showMSG(error.localizedDescription)
+                return
+            }
+            
+        }
+        
+    }
     
     
     @IBAction func singOut(_ sender: Any) {
