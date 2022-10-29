@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user{
-                self.statusLabel.text = "歡迎：" + (user.email ?? "未知")
+                self.statusLabel.text = "歡迎：EC:\(user.isEmailVerified) " + (user.email ?? "未知")
                 print(user.email)
             }else{
                 print("未登入")
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         let theAccount = account.text ?? ""
         let thePassword = password.text ?? ""
         
-        // 各種檢查
+        //TODO:各種檢查
         
         Auth.auth().signIn(withEmail: theAccount, password: thePassword){ authResult, error in
             if let error = error{
@@ -61,5 +61,17 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    
+    @IBAction func checkEmail(_ sender: Any) {
+        if let user = Auth.auth().currentUser{
+            user.sendEmailVerification()
+            showMSG("請查看你的 Email")
+        }else{
+            showMSG("請登入")
+        }
+    }
+    
+    
 }
 

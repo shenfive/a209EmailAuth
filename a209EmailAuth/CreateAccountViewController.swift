@@ -48,10 +48,16 @@ class CreateAccountViewController: UIViewController {
             if let error = error{
                 print(error.localizedDescription)
                 self.showMSG("錯誤：\(error.localizedDescription ?? "不明")")
+                             
                 return
             }
             if let uid = authResult?.user.uid{
-                self.showMSG("成功，uid:\(uid)")
+                let alert = UIAlertController(title: "提示", message: uid, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "我知道了", style: .default){_ in
+                    self.dismiss(animated: true)
+                })
+                self.present(alert, animated: true)
+                
             }
             
             
